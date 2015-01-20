@@ -4,14 +4,12 @@ var app = express();
 var restResponse = require('./index');
 
 app.use(restResponse({
-  body: {
-    statusCode: true,
-    showDafultMessage: true
-  }
+  showStatusCode: true,
+  showDefaultMessage: true
 }));
 
 app.get('*', function (req, res, next) {
-  res.rest.badRequest();
+  res.rest.success();
 });
 
 app.listen(3000, function () {
