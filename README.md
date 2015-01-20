@@ -3,7 +3,7 @@
 An express.js middleware for REST API.
 
 ## Installation
-
+TODO: Publish on npmjs.org
 ```sh
 $ npm install express-rest-response
 ```
@@ -25,6 +25,10 @@ The options are:
 - `showStatusCode` - If `true`, then added `status` parameter in the response body. (Default: false)
 - `showDefaultMessage` - If `true`, then added `message` parameter in the response body. (Default: false)
 
-<!-- ## Methods
+## Methods
 
-- `success(body, statusCode)` - --> 
+TODO: Write methods instructions here
+
+## Examples
+
+TODO: Write examples instructions here
