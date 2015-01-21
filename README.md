@@ -33,23 +33,23 @@ The options are:
 
 ## Methods
 
-### success(body, statusCode)
+**success(body, statusCode)**
   - `body` - body response or message (Default: empty)
   - `statusCode` - status code response (Default: 200)
 
-### badRequest(body)
+**badRequest(body)**
   - `body` - body response or message (Default: empty)
 
-### forbidden(body)
+**forbidden(body)**
   - `body` - body response or message (Default: empty)
 
-### notFound(body)
+**notFound(body)**
   - `body` - body response or message (Default: empty)
 
-### unauthorized(body)
+**unauthorized(body)**
   - `body` - body response or message (Default: empty)
 
-### serverError(body)
+**serverError(body)**
   - `body` - body response or message (Default: empty)
 
 ## Examples
