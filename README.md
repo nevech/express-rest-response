@@ -29,7 +29,7 @@ app.get('/users', function (req, res, next) {
 
 The options are:
 - `showStatusCode` - If `true`, then it adds `status` in the body of response. (Default: `false`)
-- `showDefaultMessage` - If `true`, then added `message` in the body of response. (Default: `false`)
+- `showDefaultMessage` - If `true`, then it adds `message` in the body of response. (Default: `false`)
 
 ## Methods
 
@@ -49,7 +49,13 @@ The options are:
 **unauthorized(body)**
   - `body` - body of response or message (Default: empty)
 
+**locked(body)**
+  - `body` - body of response or message (Default: empty)
+
 **serverError(body)**
+  - `body` - body of response or message (Default: empty)
+
+**serviceUnavailable(body)**
   - `body` - body of response or message (Default: empty)
 
 ## Examples
