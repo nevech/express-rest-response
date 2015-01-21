@@ -1,7 +1,7 @@
 {
   "name": "express-rest-response",
   "version": "1.0.1",
-  "description": "An express.js middleware expanding your Response for REST API.",
+  "description": "An express.js middleware expands your Response for REST API.",
   "main": "index.js",
   "repository": {
     "type": "git",

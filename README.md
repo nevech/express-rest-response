@@ -46,6 +46,9 @@ The options are:
 **notFound(body)**
   - `body` - body of response or message (Default: empty)
 
+**notAcceptable**
+  - `body` - body of response or message (Default: empty)
+
 **unauthorized(body)**
   - `body` - body of response or message (Default: empty)
 
