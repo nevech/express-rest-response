@@ -77,7 +77,7 @@ app.get('/users', function (req, res, next) {
 });
 ```
 
-Response status: 200
+Response status: `200`
 
 Response body:
 
@@ -107,7 +107,7 @@ app.post('/login', function (req, res, next) {
 });
 ```
 
-Response status: 400
+Response status: `400`
 
 Response body:
 
@@ -126,7 +126,7 @@ app.post('/admin', function (req, res, next) {
 });
 ```
 
-Response status: 403
+Response status: `403`
 
 Response body:
 
@@ -151,7 +151,7 @@ app.get('/posts/:id', function (req, res, next) {
 });
 ```
 
-Response status: 404
+Response status: `404`
 
 Response body:
 
@@ -170,7 +170,7 @@ app.get('/friends', function (req, res, next) {
 });
 ```
 
-Response status: 401
+Response status: `401`
 
 Response body:
 
@@ -188,7 +188,7 @@ app.get('/', function (req, res, next) {
 });
 ```
 
-Response status: 500
+Response status: `500`
 
 Response body:
 
