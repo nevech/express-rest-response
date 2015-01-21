@@ -1,6 +1,6 @@
 # express-rest-response
 
-An express.js middleware expanding your Response for REST API.
+An express.js middleware expands your Response for REST API.
 
 ## Installation
 
@@ -28,29 +28,29 @@ app.get('/users', function (req, res, next) {
 ### restResponse(options)
 
 The options are:
-- `showStatusCode` - If `true`, then added `status` parameter in the response body. (Default: false)
-- `showDefaultMessage` - If `true`, then added `message` parameter in the response body. (Default: false)
+- `showStatusCode` - If `true`, then it adds `status` in the body of response. (Default: `false`)
+- `showDefaultMessage` - If `true`, then added `message` in the body of response. (Default: `false`)
 
 ## Methods
 
 **success(body, statusCode)**
-  - `body` - body response or message (Default: empty)
-  - `statusCode` - status code response (Default: 200)
+  - `body` - body of response or message (Default: empty)
+  - `statusCode` - status code of response (Default: 200)
 
 **badRequest(body)**
-  - `body` - body response or message (Default: empty)
+  - `body` - body of response or message (Default: empty)
 
 **forbidden(body)**
-  - `body` - body response or message (Default: empty)
+  - `body` - body of response or message (Default: empty)
 
 **notFound(body)**
-  - `body` - body response or message (Default: empty)
+  - `body` - body of response or message (Default: empty)
 
 **unauthorized(body)**
-  - `body` - body response or message (Default: empty)
+  - `body` - body of response or message (Default: empty)
 
 **serverError(body)**
-  - `body` - body response or message (Default: empty)
+  - `body` - body of response or message (Default: empty)
 
 ## Examples
 
