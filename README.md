@@ -1,9 +1,6 @@
 # express-rest-response
 
-[![NPM Version][npm-image]][npm-url]
-[![Node.js Version][node-version-image]][node-version-url]
-
-An express.js middleware expands your Response for REST API.
+An express.js (4.x) middleware expands your Response for REST API.
 
 ## Installation
 
@@ -11,7 +8,7 @@ An express.js middleware expands your Response for REST API.
 $ npm install express-rest-response
 ```
 
-## API
+## Usage
 
 ```js
 var express = require('express');
