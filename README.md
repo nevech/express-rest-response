@@ -25,7 +25,7 @@ app.get('/users', function (req, res, next) {
 
 ```
 
-### restResponse(options)
+#### restResponse(options)
 
 The options are:
 - `showStatusCode` - If `true`, then it adds `status` in the body of response. (Default: `false`)
