@@ -51,7 +51,7 @@ Options:
 - serverError
 - serviceUnavailable
 
-All methods recive 2 params:
+All methods receive 2 params:
 - body (object|string) 
 - statusCode (number) optional
 
