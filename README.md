@@ -16,50 +16,44 @@ var restResponse = require('express-rest-response');
 
 var app = express();
 
+var options = {
+  showStatusCode: true,  
+  showDefaultMessage: true  
+};
+
 app.use(restResponse(options));
 
-app.get('/users', function (req, res, next) {
-  ...
-  res.rest.success(body);
-});
+app.get('/users/:id', function (req, res, next) {
+  // ...
+  var user = {
+    name: 'Username'
+  };
 
+  res.rest.success(user);
+});
 ```
 
 #### restResponse(options)
 
-The options are:
-- `showStatusCode` - If `true`, then it adds `status` in the body of response. (Default: `false`)
-- `showDefaultMessage` - If `true`, then it adds `message` in the body of response. (Default: `false`)
+Options:
+- showStatusCode: (boolean) If `true`, then it adds `status` in body of response. (Default: `false`)
+- showDefaultMessage: (boolean) If `true`, then it adds `message` in body of response. (Default: `false`)
 
 ## Methods
 
-**success(body, statusCode)**
-  - `body` - body of response or message (Default: empty)
-  - `statusCode` - status code of response (Default: 200)
+- success
+- badRequest
+- forbidden
+- notFound
+- notAcceptable
+- unauthorized
+- locked
+- serverError
+- serviceUnavailable
 
-**badRequest(body)**
-  - `body` - body of response or message (Default: empty)
-
-**forbidden(body)**
-  - `body` - body of response or message (Default: empty)
-
-**notFound(body)**
-  - `body` - body of response or message (Default: empty)
-
-**notAcceptable**
-  - `body` - body of response or message (Default: empty)
-
-**unauthorized(body)**
-  - `body` - body of response or message (Default: empty)
-
-**locked(body)**
-  - `body` - body of response or message (Default: empty)
-
-**serverError(body)**
-  - `body` - body of response or message (Default: empty)
-
-**serviceUnavailable(body)**
-  - `body` - body of response or message (Default: empty)
+All methods recive 2 params:
+- body (object|string) 
+- statusCode (number) optional
 
 ## Examples
 
@@ -111,7 +105,7 @@ Response body:
 
 ```js
 app.post('/login', function (req, res, next) {
-  ...
+  // ...
   res.rest.badRequest('Invalid email');
 });
 ```
