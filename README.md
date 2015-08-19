@@ -40,20 +40,34 @@ Options:
 - showDefaultMessage: (boolean) If `true`, then it adds `message` in body of response. (Default: `false`)
 
 ## Methods
+**1xx: Informational**
+- continue
 
+**2xx: Success**
 - success
+- created
+- accepted
+
+**4xx: Client Error**
 - badRequest
 - forbidden
 - notFound
 - notAcceptable
 - unauthorized
 - locked
+
+**5xx: Server Error**
 - serverError
 - serviceUnavailable
 
 All methods receive 2 params:
-- body (object|string) 
-- statusCode (number) optional
+
+| name  | type |
+| ------------- | ------------- |
+| body  | `object` or `string`  |
+| statusCode  | `number`  |
+
+*Full list about http status codes: [see](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)*
 
 ## Examples
 
