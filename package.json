@@ -12,7 +12,7 @@
     "email": "r.nevech@gmail.com",
     "url": "https://github.com/nevech"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nevech/express-rest-response/issues"
   },

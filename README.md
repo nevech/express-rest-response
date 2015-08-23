@@ -218,3 +218,6 @@ If options `showDefaultMessage` and/or `showStatusCode` true
   "status": 500
 }
 ```
+
+## License
+MIT license
