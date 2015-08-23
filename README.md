@@ -40,38 +40,54 @@ Options:
 - showDefaultMessage: (boolean) If `true`, then it adds `message` in body of response. (Default: `false`)
 
 ## Methods
+
+**All methods receive option `body`, type: `object` or `string`.**
+
 **1xx: Informational**
-- continue
+
+| name  | status code | Description |
+| ----------- | :-----------: | ----------- |
+| continue  | 100 | The client SHOULD continue with its request. |
+| switchingProtocols  | 101 | This means the requester has asked the server to switch protocols and the server is acknowledging that it will do so. |
+| processing  | 102 | As a WebDAV request may contain many sub-requests involving file operations, it may take a long time to complete the request. This code indicates that the server has received and is processing the request, but no response is available yet. This prevents the client from timing out and assuming the request was lost. |
 
 **2xx: Success**
-- success
-- created
-- accepted
+
+| name  | status code | Description |
+| ------------- | :---------------: | ------------- |
+| success  | 200 | The request has succeeded. |
+| ok  | 200 | Alias of method `success` |
+| created  | 201 | The request has been fulfilled and resulted in a new resource being created. |
+| accepted  | 201 | The request has been accepted for processing, but the processing has not been completed. |
+| nonAuthInfo  | 201 | Non-Authoritative Information. The returned metainformation in the entity-header is not the definitive set as available from the origin server, but is gathered from a local or a third-party copy. |
+| noContent | 204 | The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation. |
+| resetContent | 205 | The server has fulfilled the request and the user agent SHOULD reset the document view which caused the request to be sent. |
+| partialContent | 206 | The server has fulfilled the partial GET request for the resource. |
 
 **4xx: Client Error**
-- badRequest
-- forbidden
-- notFound
-- notAcceptable
-- unauthorized
-- locked
+
+| name  | status code | Description |
+| ------------- | :---------------: | ------------- |
+| badRequest | 400 | The request could not be understood by the server due to malformed syntax. |
+| unauthorized | 401 | The request requires user authentication. |
+| forbidden | 403 | The server understood the request, but is refusing to fulfill it. |
+| notFound | 404 | The server has not found anything matching the Request-URI. |
+| notAcceptable | 406 | The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to the accept headers sent in the request. |
+| requestTimeout | 408 | The server timed out waiting for the request. |
+| locked | 423 | The resource that is being accessed is locked |
 
 **5xx: Server Error**
-- serverError
-- serviceUnavailable
 
-All methods receive 2 params:
+| name  | status code | Description |
+| ------------- | :---------------: | ------------- |
+| serverError | 500 | The server encountered an unexpected condition which prevented it from fulfilling the request. |
+| serviceUnavailable | 503 | The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. |
 
-| name  | type |
-| ------------- | ------------- |
-| body  | `object` or `string`  |
-| statusCode  | `number`  |
-
-*Full list about http status codes: [see](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)*
+*More info about http status codes: [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), [W3C](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)*
 
 ## Examples
 
-### success(body, statusCode)
+### success(body)
 
 ```js
 app.get('/users', function (req, res, next) {
@@ -138,7 +154,7 @@ Response body:
 
 ```js
 app.post('/admin', function (req, res, next) {
-  ...
+  // ...
   res.rest.forbidden();
 });
 ```
@@ -163,7 +179,7 @@ If options `showDefaultMessage` true
 
 ```js
 app.get('/posts/:id', function (req, res, next) {
-  ...
+  // ...
   res.rest.notFound('Post not found');
 });
 ```
@@ -175,25 +191,6 @@ Response body:
 ```json
 {
   "message": "Post not found"
-}
-```
-
-### unauthorized(body)
-
-```js
-app.get('/friends', function (req, res, next) {
-  ...
-  res.rest.unauthorized('You must login');
-});
-```
-
-Response status: `401`
-
-Response body:
-
-```json
-{
-  "message": "You must login"
 }
 ```
 
