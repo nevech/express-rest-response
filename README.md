@@ -220,4 +220,4 @@ If options `showDefaultMessage` and/or `showStatusCode` true
 ```
 
 ## License
-MIT license
+[The MIT License](./LICENSE)
